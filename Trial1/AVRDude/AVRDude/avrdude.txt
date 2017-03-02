@@ -1,0 +1,5 @@
+avrdude -c stk500v2 -p m2560 -P NEX-USB-ISP -U flash:w:"C:\Users\nak\AppData\Local\Temp\arduino_build_579206/xBee.ino.hex":i
+
+
+
+sudo avrdude -c stk500v2 -p m2560 -P /dev/tty.usbmodem1421 -U flash:w:”~/Desktop/Trial1.ino.hex”:i

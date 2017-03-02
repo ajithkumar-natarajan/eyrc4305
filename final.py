@@ -8,14 +8,29 @@ sum = 17
 c1 = 0
 c2 = 0
 c3 = 0
-img1 = cv2.imread('imag.jpg')
-img2 = img1[87:128,108:388]
-img3 = img1[285:367,108:388]
+img1 = cv2.imread('imag1.jpg')
+img2 = img1[87:128,158:438]
+img3 = img1[285:367,158:438]
+img4 = img1[185:225,440:480]
 
 
-"""
+
+#x = 365-205
+#y = 530-460
+#print x,y
+
+
+#cv2.imshow("image",img2)
+#cv2.waitKey(0)
+
+#cv2.imshow("img",img3)
+#cv2.waitKey(0)
+
+
 #cv2.imshow("image",img3)
 #cv2.waitKey(0)
+
+"""
 
 arr = [[1 for i in range(7)]for j in range(2)]
 obs = [[1 for i in range(7)]for j in range(2)]
@@ -24,7 +39,7 @@ temp_array = [1 for i in range(7)]
 
 
 
-#Track - 1 : Conversion to Matrix form
+#Track - 1 : Conversion to Ma`trix form
 
 print 'Track-1'
 
@@ -81,11 +96,11 @@ ans = 0
 comp = 0
 
 
-b1 = img1[40:80,515:555]
+b1 = img1[59:80,480:520]
 for x2 in range(0,10):
 	imgpath = 'digit/'+str(x2)+'.jpg'
 	img3 = cv2.imread(imgpath)
-	res = cv2.matchTemplate(img3,b1,cv2.TM_CCOEFF)
+	res = cv2.matchTemplate(b1,img3,cv2.TM_CCOEFF)
 	min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 	if (max_val > comp):
 		comp = max_val
@@ -98,7 +113,7 @@ cv2.waitKey(0)
 ans = 0
 comp = 0
 
-b2 = img1[40:80,595:635]
+b2 = img1[59:80,550:580]
 
 for x2 in range(0,10):
 	imgpath = 'digits/'+str(x2)+'.jpg'
@@ -117,12 +132,12 @@ cv2.waitKey(0)
 ans = 0
 comp = 0
 
-b3 = img1[345:385,510:550]
+b3 = img1[290:315,500:520]
 
 for x2 in range(0,10):
 	imgpath = 'digits/'+str(x2)+'.jpg'
 	img3 = cv2.imread(imgpath)
-	res = cv2.matchTemplate(img3,b3,cv2.TM_CCOEFF)
+	res = cv2.matchTemplate(b3,img3,cv2.TM_CCOEFF)
 	min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
 	#print min_val,max_val,min_loc,max_loc
 	if (max_val > comp):
@@ -136,7 +151,7 @@ cv2.waitKey(0)
 ans = 0
 comp = 0
 
-b4 = img1[345:385,595:635]
+b4 = img1[290:315,550:580]
 for x2 in range(0,10):
 	imgpath = 'digits/'+str(x2)+'.jpg'
 	img3 = cv2.imread(imgpath)
@@ -158,4 +173,3 @@ boulders = [3,4,9,4]
 
 
 #Process Sum
-
